@@ -17,7 +17,7 @@ export type NumericAxisProps = {
   height?: number;
 };
 
-const StyledSvg = styled('svg', ({ $theme }) => ({
+const StyledSvg = styled('svg', ({ $theme }: any) => ({
   pointerEvents: 'none',
   overflow: 'visible',
   color: $theme.colors.contentTertiary,

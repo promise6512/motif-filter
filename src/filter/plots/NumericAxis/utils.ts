@@ -4,7 +4,7 @@ import {
   preciseRound,
 } from '../utils';
 
-export type DomainType = [number, number];
+export type DomainType = number[];
 export interface TickRules {
   [key: string]: number;
 }

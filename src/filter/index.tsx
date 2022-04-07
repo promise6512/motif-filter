@@ -4,7 +4,7 @@ import { RangePlot } from './plots';
 import { HistogramBin } from './plots/type';
 
 export type HistogramProp = {
-  domain: [number, number];
+  domain: number[];
   data: HistogramBin[];
   step: number;
   dataType: string;
@@ -13,8 +13,8 @@ export type HistogramProp = {
 
 type FilterSelectionContentProps = {
   histogram: HistogramProp;
-  value: [number, number];
-  onChangeRange: ([v0, v1]: [number, number]) => void;
+  value: number[];
+  onChangeRange: ([v0, v1]: number[]) => void;
 };
 
 const FilterSelectionRangePlot: FC<FilterSelectionContentProps> = (
@@ -34,7 +34,7 @@ const FilterSelectionRangePlot: FC<FilterSelectionContentProps> = (
   const format = '';
   const value = [1.2, 9.8];
 
-  const onChangeRange = arr => {
+  const onChangeRange = (arr: any) => {
     console.log(arr);
   };
 

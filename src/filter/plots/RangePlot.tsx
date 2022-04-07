@@ -11,18 +11,18 @@ import DateTimeAxis from './DateTimeAxis';
 import TimeAxis from './TimeAxis';
 
 export type RangePlotProps = {
-  range: [number, number];
-  value: [number, number];
+  range: number[];
+  value: number[];
   histogram: HistogramBin[];
   dataType: string;
-  onChange: ([v0, v1]: [number, number]) => void;
-  onFinalChange?: ([v0, v1]: [number, number]) => void;
+  onChange: ([v0, v1]: number[]) => void;
+  onFinalChange?: ([v0, v1]: number[]) => void;
   xAxisFormat?: string;
   step?: number;
   numTicks?: number;
   size?: 'default' | 'compact';
-  height?: number;
-  width?: number;
+  height?: number | null;
+  width?: number | null;
   isRanged?: boolean;
   [key: string]: any;
 };

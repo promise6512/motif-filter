@@ -11,10 +11,10 @@ type AxisRef = SVGSVGElement | null;
 type TimeAxisProps = {
   width?: number;
   height?: number;
-  domain: [number, number];
+  domain: number[];
 };
 
-const StyledSvg = styled('svg', ({ $theme }) => ({
+const StyledSvg = styled('svg', ({ $theme }: any) => ({
   pointerEvents: 'none',
   overflow: 'visible',
   color: $theme.colors.contentTertiary,

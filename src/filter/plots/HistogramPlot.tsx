@@ -13,9 +13,9 @@ export type HistogramPlotProps = {
   height: number;
   isRanged: boolean;
   step: number;
-  domain: [number, number];
+  domain: number[];
   histogram: HistogramBin[];
-  value: [number, number];
+  value: number[];
   brushComponent: any;
 };
 
@@ -34,7 +34,7 @@ const StyledSvg = styled('svg', ({ $theme, width, height }: StyledSvgType) => ({
   overflow: 'visible',
   width,
   height,
-  marginTop: $theme.sizing.scale300,
+  marginTop: $theme!.sizing.scale300,
 }));
 
 const HistogramPlot = ({
@@ -56,7 +56,7 @@ const HistogramPlot = ({
   const y = useMemo(
     () =>
       scaleLinear()
-        .domain([0, max(histogram, getValue)])
+        .domain([0, max(histogram, getValue)!])
         .range([0, height]),
     [histogram, height, getValue],
   );
@@ -67,7 +67,7 @@ const HistogramPlot = ({
     <StyledSvg width={width} height={height}>
       <g className='histogram-bars'>
         {histogram.map((bar: HistogramBin) => {
-          const inRange = bar.x0 <= value[1] && bar.x0 >= value[0];
+          const inRange = bar.x0! <= value[1] && bar.x0! >= value[0];
 
           const wRatio: number = inRange
             ? histogramStyle.highlightW
@@ -79,7 +79,7 @@ const HistogramPlot = ({
               key={bar.x0}
               height={y(getValue(bar))}
               width={barWidth * wRatio}
-              x={x(bar.x0) + (barWidth * (1 - wRatio) - barWidth) / 2}
+              x={x(bar.x0!) + (barWidth * (1 - wRatio) - barWidth) / 2}
               rx={1}
               ry={1}
               y={height - y(getValue(bar))}

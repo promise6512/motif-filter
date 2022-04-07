@@ -13,10 +13,10 @@ export type DateTimeAxisProps = {
   width?: number;
   height?: number;
   xAxisFormat?: string;
-  domain: [number, number];
+  domain: number[];
 };
 
-const StyledSvg = styled('svg', ({ $theme }) => ({
+const StyledSvg = styled('svg', ({ $theme }: any) => ({
   pointerEvents: 'none',
   overflow: 'visible',
   color: $theme.colors.contentTertiary,
