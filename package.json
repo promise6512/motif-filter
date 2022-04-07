@@ -1,6 +1,5 @@
 {
-  "private": true,
-  "name": "dumi-template",
+  "name": "motif-gi",
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
