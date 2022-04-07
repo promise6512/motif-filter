@@ -4,10 +4,15 @@ nav:
   path: /components
 ---
 
-## Filter
+## Foo
 
 Demo:
 
-<code src="./demo/index.tsx">
+```tsx
+import React from 'react';
+import { Foo } from 'dumi-template';
+
+export default () => <Foo title="First Demo" />;
+```
 
 [更多技巧](https://d.umijs.org/guide/demo-principle)

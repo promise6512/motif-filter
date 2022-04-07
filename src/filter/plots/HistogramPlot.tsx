@@ -50,7 +50,9 @@ const HistogramPlot = ({
   const getValue = useMemo(() => (d: HistogramBin) => d.count, []);
 
   const x = useMemo(() => {
-    return scaleLinear().domain(domain).range([0, width]);
+    return scaleLinear()
+      .domain(domain)
+      .range([0, width]);
   }, [domain, width]);
 
   const y = useMemo(
@@ -65,10 +67,9 @@ const HistogramPlot = ({
 
   return !histogram || !histogram.length ? null : (
     <StyledSvg width={width} height={height}>
-      <g className='histogram-bars'>
+      <g className="histogram-bars">
         {histogram.map((bar: HistogramBin) => {
           const inRange = bar.x0! <= value[1] && bar.x0! >= value[0];
-
           const wRatio: number = inRange
             ? histogramStyle.highlightW
             : histogramStyle.unHighlightedW;

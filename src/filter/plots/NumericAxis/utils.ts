@@ -1,8 +1,5 @@
 import { ScaleLinear } from 'd3-scale';
-import {
-  getDecimalPrecisionCount,
-  preciseRound,
-} from '../utils';
+import { getDecimalPrecisionCount, preciseRound } from '../utils';
 
 export type DomainType = number[];
 export interface TickRules {
